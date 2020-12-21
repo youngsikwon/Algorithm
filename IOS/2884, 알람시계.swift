@@ -21,13 +21,17 @@ var inputHour = Int(input[0])!,  inputMinute = Int(input[1])!
 var outputHour: Int = 0, outputMinute:Int = 0
 
 if inputHour >= 1{
+
   outputHour = (inputHour * 60 + inputMinute - 45)/60
 
   outputMinute = (inputHour * 60 + inputMinute - 45)%60
-  
+
 } else if inputHour==0 && inputMinute < 45{
+
   outputHour = 23
+
   outputMinute = inputMinute + 60 - 45
+
 }else if inputHour==0 && inputMinute >= 45{
   outputHour = 0
   outputMinute = inputMinute - 45
@@ -35,4 +39,5 @@ if inputHour >= 1{
 
 print(outputHour, outputMinute)
 --------------------------------------------------------------------------------------------------------------------------------
-
+// 00시 00분에서 45분 일찍 일어난다고 할 때 23시로 돌아가는 부분은
+// 00 ~ 45분과 45분 ~60분으로 경우를 나누어서 제출.
